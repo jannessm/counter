@@ -1,0 +1,5 @@
+
+<input id="start" [value]="start" (input)="updateStart($event.target.value)" placeholder="start" >
+<input id="duration" [value]="duration" (input)="updateDuration($event.target.value)" placeholder="duration">
+<div id="countdown" [class.negative]="negative">{{ countdown }}</div>
+<div id="end-time">{{ endTime }}</div>
