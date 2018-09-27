@@ -49,7 +49,6 @@ export class AppComponent implements OnInit{
   updateStart(time){
     if(/:/g.test(time)){
       this.startTime = Moment(time, 'H:mm');
-      this.start = formatDate(this.startTime.toString(), 'H:mm', 'de');
       this.updateEnd();
     }
   }
