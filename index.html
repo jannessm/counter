@@ -39,7 +39,7 @@
                 font-size: 2em;
             }
             #counter.negative {
-                color: green;
+                color: #35d400;
             }
             #until {
                 font-size: 1em;
@@ -99,6 +99,8 @@
                         isNegative.value = true;
                         duration *= -1;
                         minus = '-'
+                    } else {
+                        isNegative.value = false;
                     }
 
                     const ms = Math.floor(duration % 1000 / 10);
