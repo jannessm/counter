@@ -50,8 +50,8 @@
     <body>
         <div id="app">
             <div id="inputs">
-                <input :value="startTime">
-                <input :value="durationInp">
+                <input v-model="startTime">
+                <input v-model="durationInp">
             </div>
             <div id="counter" :class="{negative: isNegative}">{{ time }}</div>
             <div id="until">{{ until.toString('HH:mm') }}</div>
