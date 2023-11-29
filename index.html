@@ -67,26 +67,26 @@
                 const startTime = ref('8:00');
                 const durationInp = ref('8:00');
                 const durationTotal = computed(() => {
-                    const dur = Date.parse(durationInp.value);
-                    
                     try {
+                        const dur = Date.parse(durationInp.value);
                         if (dur.getHours() >= 6 && dur.getHours() < 9) {
                             dur.addMinutes(30);
                         } else if (dur.getHours() >= 9) {
                             dur.addMinutes(45);
                         }
-                    } catch (e) { }
-                    
-                    return dur;
+    
+                        return dur;
+                    } catch (e) {
+                        return Date.parse('8:30');
+                    }
                 });
                 const until = computed(() => {
-                    const start = Date.parse(startTime.value);
-                    
                     try {
+                        const start = Date.parse(startTime.value);
                         return start.add({hours: durationTotal.value.getHours(), minutes: durationTotal.value.getMinutes()});
-                    } catch (e) { }
-                    
-                    return start;
+                    } catch (e) {
+                        return Date.today();
+                    }
                 });
                 const time = ref('');
                 const isNegative = ref(false);
